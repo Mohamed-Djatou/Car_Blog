@@ -1,0 +1,31 @@
+<% include partials/header %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to the hompage</h1>
+            <p>you can see a selection of cars from the users</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/cars/newcars">Add a new car here</a>
+            </p>
+        </div>
+    </header>
+
+    <div class="row" style="display:flex; flex-wrap:wrap">
+        <% cars.forEach(function(car){%>    
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail" style="background-color:rgb(209, 206, 206);">
+                <img src="<%=car.image%>">
+                <div class="caption">
+                    <h4><%=car.name%></h4>
+                </div>
+                <p>
+                    <a href="/cars/<%=car._id%>" class="btn btn-primary">More Info</a>
+                </p>
+            </div>  
+        </div>
+        <%});%>
+    </div>
+</div>
+    
+<% include partials/footer %>

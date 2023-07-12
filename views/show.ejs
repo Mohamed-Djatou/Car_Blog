@@ -1,0 +1,10 @@
+ <% include partials/header %>
+<h1>This is the description of the <%=car.name%></h1>
+<h4>Description: <%=car.description%></h4>
+<% car.comments.forEach(function(comment){ %>
+    <p>
+        <strong><%= comment.author%></strong> - <%= comment.text%>
+    </p> 
+<% }); %>
+    <a href="" class= "btn btn-primary btn-lg">add a comment</a>
+<% include partials/footer %> 
